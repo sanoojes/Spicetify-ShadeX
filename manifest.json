@@ -1,0 +1,16 @@
+{
+  "name": "ShadeX",
+  "description": "A Minimal Spicetify theme inspired by Shadcn/ui Design",
+  "preview": "assets/images/base.png",
+  "readme": "README-Marketplace.md",
+  "usercss": "https://sanooj.is-a.dev/Spicetify-ShadeX/src/user.css",
+  "schemes": "https://sanooj.is-a.dev/Spicetify-ShadeX/src/color.ini",
+  "include": ["https://sanooj.is-a.dev/Spicetify-ShadeX/src/theme.js"],
+  "authors": [
+    {
+      "name": "Sanoojes",
+      "url": "https://github.com/sanoojes"
+    }
+  ],
+  "tags": ["shadcn", "dark", "minimal"]
+}
