@@ -484,7 +484,7 @@ button,
 .ChipInnerComponent-lg,
 .ChipInnerComponent-lg-selected,
 .Button-small-buttonPrimary-useBrowserDefaultFocusStyle {
-  width: fit-content;
+  min-width: fit-content;
   text-wrap: nowrap;
   border-radius: var(--border-radius) !important;
   transition: 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
