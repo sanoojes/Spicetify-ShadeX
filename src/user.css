@@ -93,7 +93,7 @@ textarea,
 .encore-text-headline-large,
 .main-nowPlayingView-sectionHeaderSpacing .main-nowPlayingView-lyricsContent {
   --text-subdued: var(--spice-subtext) !important;
-  font-family: var(--font-to-use) !important;
+  font-family: var(--font) !important;
   font-weight: var(--normal-font-weight);
   letter-spacing: 0.015rem;
 }
@@ -102,7 +102,7 @@ textarea,
 .encore-text-body-large-bold,
 .encore-text-body-medium-bold,
 .encore-text-body-small-bold {
-  font-family: var(--font-to-use) !important;
+  font-family: var(--font) !important;
   font-weight: var(--bold-font-weight);
 }
 
