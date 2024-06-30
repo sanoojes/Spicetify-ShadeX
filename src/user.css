@@ -98,6 +98,7 @@ textarea,
   letter-spacing: 0.015rem;
 }
 
+.main-trackList-rowTitle,
 .encore-text-body-large-bold,
 .encore-text-body-medium-bold,
 .encore-text-body-small-bold {
@@ -257,7 +258,7 @@ textarea,
 
 .main-home-filterChipsSection:after,
 .main-topBar-overlay {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 .LegacyChipComponent-checkbox-chip-sm-selected-useBrowserDefaultFocusStyle,
@@ -514,8 +515,11 @@ button,
   padding: 0 var(--padding-md) var(--padding-sm) var(--padding-md);
 }
 
-.main-trackList-rowMarker {
+.main-trackList-number {
+  top: 0;
+  right: 0;
   letter-spacing: -0.025rem !important;
+  font-size: 0.85rem;
 }
 
 button.switch,
@@ -583,7 +587,6 @@ button.switch,
   align-items: center;
 }
 
-button:has(path[d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"]),
 .main-playButton-button[aria-label*="Play"],
 .main-playButton-PlayButton>button[aria-label*="Play"],
 .main-playPauseButton-button[aria-label="Play"],
@@ -638,7 +641,6 @@ button:has(path[d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0
   width: var(--button-size, 28px);
 }
 
-button:has(path[d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"]),
 .main-playButton-button[aria-label*="Play"],
 .main-playButton-PlayButton>button[aria-label*="Play"],
 .main-playPauseButton-button[aria-label="Play"],
