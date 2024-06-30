@@ -150,6 +150,10 @@ textarea,
   color: var(--spice-text);
 }
 
+.playlist-playlist-whiteOpacity {
+  color: var(--spice-text);
+}
+
 /* Root Container */
 .Root__top-container {
   background-color: var(--spice-main);
@@ -450,9 +454,63 @@ input:focus,
   max-width: 60vw;
 }
 
-/* Buttons */
-button {
+/* Button styles */
+button,
+.ap8U6ZVS8BqMxUdinBis
+/* ADD: card close button */
+,
+.main-avatar-avatar,
+.main-playPauseButton-button,
+.main-skipForwardButton-button,
+.main-skipBackButton-button,
+.ButtonInner-small-iconOnly,
+.ButtonInner-medium-iconOnly,
+.ButtonInner-large-iconOnly,
+
+.main-globalNav-historyButtons button,
+.Button-textBase-medium-medium-buttonTertiary-condensedAll-useBrowserDefaultFocusStyle,
+.Button-textBrightAccent-large-large-buttonTertiary-iconOnly-condensed-useBrowserDefaultFocusStyle,
+.ButtonInner-medium,
+.Button-small-buttonPrimary-useBrowserDefaultFocusStyle-data-is-icon-only,
+.Button-small-small-buttonTertiary-iconOnly-useBrowserDefaultFocusStyle,
+.Button-small-small-buttonTertiary-condensedAll-useBrowserDefaultFocusStyle,
+.Root__globalNav .main-globalNav-link-icon,
+.Button-small-buttonSecondary-useBrowserDefaultFocusStyle,
+.LegacyChipComponent-checkbox-chip-sm-useBrowserDefaultFocusStyle,
+.ChipInnerComponent-sm,
+.ChipInnerComponent-sm-selected,
+.ChipInnerComponent-md,
+.ChipInnerComponent-md-selected,
+.ChipInnerComponent-lg,
+.ChipInnerComponent-lg-selected,
+.Button-small-buttonPrimary-useBrowserDefaultFocusStyle {
+  width: fit-content;
+  text-wrap: nowrap;
   border-radius: var(--border-radius) !important;
+  transition: 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.Button-buttonPrimary-useBrowserDefaultFocusStyle-data-is-icon-only:hover .ButtonInner-sc-14ud5tc-0,
+.Button-buttonPrimary-useBrowserDefaultFocusStyle-data-is-icon-only:hover .ButtonFocus-sc-2hq6ey-0,
+.Button-small-small-buttonTertiary-iconOnly-useBrowserDefaultFocusStyle:hover,
+.main-globalNav-historyButtons button:hover,
+.main-topBar-historyButtons button,
+.main-topBar-buddyFeed:hover,
+.Button-textBase-medium-medium-buttonTertiary-condensedAll-useBrowserDefaultFocusStyle:hover,
+.Button-small-small-buttonTertiary-condensedAll-useBrowserDefaultFocusStyle:hover,
+.Button-medium-medium-buttonTertiary-iconOnly-useBrowserDefaultFocusStyle:hover,
+.Button-medium-medium-buttonTertiary-iconOnly-condensedAll-useBrowserDefaultFocusStyle:hover {
+  transform: scale(var(--scale-down)) !important;
+}
+
+.StyledTabItem-tab-tabItem-useBrowserDefaultFocusStyle[aria-selected="true"] {
+  background: var(--spice-tab-active);
+}
+
+.main-trackList-trackList {
+  border: var(--default-border) !important;
+  background-color: var(--spice-main) !important;
+  color: var(--spice-subtext);
 }
 
 button.switch,
