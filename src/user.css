@@ -562,16 +562,3 @@ button.main-playPauseButton-button {
   border: var(--default-border);
   border-radius: var(--card-border-radius);
 }
-
-/* Main view cards */
-.N_8iI7NKHP0iG2jp3g0R
-
-/* ADD: Browse bg color */
-,
-.main-embedWidgetGenerator-container,
-.main-trackCreditsModal-container,
-.playlist-playlist-playlistContent,
-::backdrop {
-  background-color: transparent;
-  background: none !important;
-}
