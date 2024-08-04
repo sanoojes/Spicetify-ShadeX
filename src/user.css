@@ -42,6 +42,8 @@
   --normal-font-weight: 500;
   --bold-font-weight: 600;
   --extra-bold-font-weight: 700;
+
+  --card-color: rgba(var(--spice-rgb-card), 0.5)
 }
 
 /* Spicetify Overrides */
@@ -51,6 +53,11 @@
   box-shadow: none !important;
   scrollbar-width: thin;
   font-family: var(--default-font-family), CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif) !important;
+}
+
+body,
+input {
+  color: rgba(var(--spice-rgb-text), 0.75);
 }
 
 .encore-dark-theme,
@@ -184,11 +191,6 @@ button,
 
 .main-nowPlayingView-section {
   border: var(--default-border);
-}
-
-/* Generic Modal */
-.GenericModal__overlay {
-  background-color: rgba(var(--spice-rgb-shadow), 0.35);
 }
 
 /*  */
@@ -404,4 +406,172 @@ button.main-playPauseButton-button {
   --lyrics-color-background: var(--spice-card) !important;
   --lyrics-color-messaging: rgb(0, 0, 0) !important;
   --lyrics-color-inactive: rgba(var(--spice-rgb-subtext), .25);
+}
+
+/* Search modal */
+.N9tnwm0XDrt_eGJd2D2A:has(._kfmGT75UTPoF_D2afwa) {
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  backdrop-filter: blur(var(--blur-lg));
+  transition: backdrop-filter 0.5s ease-in-out;
+}
+
+.zZMsUUWG29PYcwWPXhOV:not(._kfmGT75UTPoF_D2afwa) {
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  backdrop-filter: blur(var(--blur-lg));
+  transition: backdrop-filter 0.3s ease;
+}
+
+.zZMsUUWG29PYcwWPXhOV,
+.search-modal-emptySearchTermContainer,
+.search-modal-emptySearchTermContainer,
+.search-modal-keyboard-accessibility-bar,
+.search-modal-listbox {
+  background-color: var(--card-color);
+  border: var(--default-border);
+}
+
+.search-modal-listbox {
+  border-top: none;
+}
+
+.search-modal-keyboard-accessibility-bar {
+  border-top: none;
+  border-bottom: none;
+}
+
+.zZMsUUWG29PYcwWPXhOV._kfmGT75UTPoF_D2afwa {
+  border-bottom: none;
+}
+
+.search-modal-searchBar {
+  border-radius: var(--card-border-radius);
+  background-color: rgba(var(--spice-rgb-selected-row), 0.125) !important;
+  color: var(--spice-text) !important;
+}
+
+.search-modal-searchIcon,
+.search-modal-input {
+  color: var(--spice-subtext) !important;
+}
+
+.search-modal-searchIcon,
+.search-modal-input {
+  color: var(--spice-subtext) !important;
+}
+
+.search-modal-searchBar:has(.search-modal-input:hover) {
+  background-color: rgba(var(--spice-rgb-selected-row), 0.25) !important;
+
+  .search-modal-searchIcon,
+  .search-modal-input {
+    color: var(--spice-text) !important;
+  }
+}
+
+.search-modal-searchBar:has(.search-modal-input:focus) {
+  background-color: rgba(var(--spice-rgb-card), 0.75) !important;
+  border-bottom: 2px solid rgb(var(--accent-color)) !important;
+
+  .search-modal-searchIcon,
+  .search-modal-input {
+    color: var(--spice-text) !important;
+  }
+}
+
+.search-modal-input {
+  background-color: transparent !important;
+}
+
+/* Generic Modal */
+
+.GenericModal__overlay {
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.JnpOnFaQfrRIA2fYe88A
+
+/* ADD: classes for artist popup */
+  {
+  max-height: 70vh !important;
+}
+
+.GenericModal__overlay {
+  background-color: rgba(var(--spice-rgb-shadow),
+      var(--generic-modal-bg-opacity));
+}
+
+.KIbfbFDao0SHpZsKoKZD,
+.aJduGcVsoCwJvV1jVqjl,
+.BoxComponent-box-elevated {
+  --text-base: var(--spice-text) !important;
+  background-color: rgba(var(--spice-rgb-shadow),
+      0.2) !important;
+  color: var(--spice-text) !important;
+  -webkit-backdrop-filter: blur(var(--blur-sm));
+  backdrop-filter: blur(var(--blur-sm));
+  border: var(--default-border);
+}
+
+.uv2sbcK86mvObEP6I6hA,
+[data-testid="playlist-permissions-modal"],
+.pdkMNbSQl8Yi5tl0iOF9,
+.C1USyigFSYyc22_BmsgB,
+.hmgHdasWrZaA9tiXVw_u,
+.JnpOnFaQfrRIA2fYe88A,
+.uJjmxe0T11dUVeW6Biz8,
+.main-embedWidgetGenerator-container,
+.main-trackCreditsModal-container,
+.GenericModal,
+.desktopmodals-aboutSpotifyModal-container {
+  max-height: 90vh;
+  background-color: var(--card-color);
+  border: var(--default-border);
+  border-radius: var(--border-radius-md);
+  -webkit-backdrop-filter: blur(var(--blur-xl));
+  backdrop-filter: blur(var(--blur-xl));
+}
+
+.main-embedWidgetGenerator-contentCode {
+  display: none;
+  visibility: hidden;
+  background-color: transparent;
+}
+
+.main-embedWidgetGenerator-visible,
+.main-embedWidgetGenerator-contentCode.main-embedWidgetGenerator-visible {
+  display: block;
+  visibility: visible;
+}
+
+.main-embedWidgetGenerator-code {
+  background-color: var(--card-color);
+  border: var(--default-border);
+  border-radius: var(--card-border-radius);
+}
+
+/* Main view cards */
+.N_8iI7NKHP0iG2jp3g0R
+
+/* ADD: Browse bg color */
+,
+.main-embedWidgetGenerator-container,
+.main-trackCreditsModal-container,
+.playlist-playlist-playlistContent,
+::backdrop {
+  background-color: transparent;
+  background: none !important;
 }
