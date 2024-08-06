@@ -206,6 +206,7 @@ button,
   border: var(--default-border);
 }
 
+.playlist-playlist-refreshButton,
 .search-recentSearches-seeAll {
   background-color: var(--spice-secondary-button);
   color: var(--spice-secondary-text);
@@ -214,6 +215,7 @@ button,
   border-radius: var(--border-radius-md);
 }
 
+.playlist-playlist-refreshButton:hover,
 .search-recentSearches-seeAll:hover {
   text-decoration: none !important;
   background-color: var(--spice-secondary-button-hover);
