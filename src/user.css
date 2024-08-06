@@ -51,7 +51,9 @@
     CircularSp-Deva,
     var(--fallback-fonts, sans-serif);
 
-  --card-color: rgba(var(--spice-rgb-card), 0.5)
+  --top-bar-backdrop: blur(24px) saturate(140%);
+
+  --spice-card-hover: var(--spice-button-hover);
 }
 
 /* Spicetify Overrides */
@@ -97,6 +99,10 @@ input {
 .encore-text-body-small-bold,
 .main-card-cardTitle {
   font-weight: var(--bold-font-weight) !important;
+}
+
+.ListRowText-bodyMedium-textBase-listRowTitle-useBrowserDefaultFocusStyle {
+  font-weight: 600;
 }
 
 .encore-text-body-small,
@@ -150,9 +156,20 @@ button,
   background-color: rgba(var(--spice-rgb-accent), .75);
 }
 
+.view-homeShortcutsGrid-shortcut:focus-within,
+.view-homeShortcutsGrid-shortcut:hover,
+.view-homeShortcutsGrid-shortcut[data-context-menu-open=true] {
+  background-color: var(--spice-button-hover);
+}
+
 .main-card-cardContainer {
-  border: var(--default-border);
   background-color: var(--spice-card);
+}
+
+.BoxComponent-group-listRow-tinted-isInteractive-minBlockSize_56px-padding_8px,
+.BoxComponent-group-listRow-naked-isInteractive-minBlockSize_56px-padding_8px:hover::after,
+.main-card-cardContainer:hover {
+  background-color: var(--spice-card-hover);
 }
 
 .main-userWidget-box {
@@ -166,6 +183,70 @@ button,
   border: var(--default-border)
 }
 
+.search-recentSearches-seeAll {
+  background-color: var(--spice-secondary-button);
+  color: var(--spice-secondary-text);
+  margin: 0;
+  padding: var(--padding-md) var(--padding-lg);
+  border-radius: var(--border-radius-md);
+}
+
+.search-recentSearches-seeAll:hover {
+  text-decoration: none !important;
+  background-color: var(--spice-secondary-button-hover);
+}
+
+
+/* Home Grids */
+.main-gridContainer-gridContainer {
+  grid-gap: 0;
+}
+
+/* Home shortcut grid */
+@container (min-width: 0) {
+  .view-homeShortcutsGrid-grid {
+    --item-height: 52px;
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@container (min-width: 815px) {
+  .view-homeShortcutsGrid-grid {
+    --item-height: 52px;
+    grid-template-columns: repeat(3, 1fr)
+  }
+
+  .view-homeShortcutsGrid-gridOf4Columns {
+    grid-template-columns: repeat(4, 1fr)
+  }
+}
+
+@container (min-width: 1141px) {
+  .view-homeShortcutsGrid-grid {
+    --item-height: 64px;
+    grid-gap: var(--gap-md)
+  }
+}
+
+@container (min-width: 1599px) {
+  .view-homeShortcutsGrid-grid {
+    --item-height: 80px;
+    grid-gap: var(--gap-md)
+  }
+}
+
+.view-homeShortcutsGrid-shortcut {
+  border-radius: var(--border-radius-sm);
+  background-color: var(--spice-card);
+  border: var(--default-border);
+}
+
+.JS9WYvoqyy3vUXqMt5Hv,
+.view-homeShortcutsGrid-shortcut .view-homeShortcutsGrid-main .view-homeShortcutsGrid-name {
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
 /* Home Header Bg */
 .main-home-homeHeader {
   background: var(--spice-main) !important;
@@ -177,27 +258,19 @@ button,
   background-color: transparent !important;
 }
 
+.main-home-filterChipsSection
+
+/* Filter Chips */
+,
 .main-topBar-background,
 .main-trackList-trackListHeaderStuck.main-trackList-trackListHeader {
   background-color: rgba(var(--spice-rgb-main), 0.5) !important;
-  -webkit-backdrop-filter: blur(var(--blur-xl));
-  backdrop-filter: blur(var(--blur-xl));
-}
-
-.main-trackList-trackListHeaderStuck.main-trackList-trackListHeader {
+  -webkit-backdrop-filter: var(--top-bar-backdrop);
+  backdrop-filter: var(--top-bar-backdrop);
   border-bottom: var(--default-border);
-
 }
 
 /* Filter Chips */
-.main-home-filterChipsSection {
-  background-color: rgba(var(--spice-rgb-main), 0.25) !important;
-  -webkit-backdrop-filter: blur(var(--blur-xl));
-  backdrop-filter: blur(var(--blur-xl));
-  -webkit-transition: backdrop-filter .25s, opacity .4s ease-out;
-  transition: backdrop-filter .25s, opacity .4s ease-out
-}
-
 .main-home-filterChipsSection:after,
 .main-home-filterChipsSection.fIvMht6B9HdROywMNJZ4:after {
   background-color: rgba(var(--spice-rgb-main), .6) !important;
@@ -252,15 +325,7 @@ button,
 }
 
 .main-entityHeader-container.main-entityHeader-nonWrapped .contentSpacing {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: var(--default-border);
   border-radius: var(--border-radius-md);
-  width: 85%;
-  height: fit-content;
-  padding: var(--padding-md) var(--padding-lg);
 }
 
 .main-entityHeader-background,
@@ -277,10 +342,33 @@ button,
   background: transparent !important;
 }
 
-/* Now Playing Bar */
-button[data-restore-focus-key="now_playing_view"] {
-  display: none;
+/* Aside Now Playing Bar */
+aside[aria-label="Now playing view"] .ZbDMGdU4aBOnrNLowNRq,
+aside[aria-label="Now playing view"] .W3E0IT3_STcazjTeyOJa {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  transition: backdrop-filter 0.5s ease, background-color 0.2s ease;
+  top: 0;
 }
+
+aside[aria-label="Now playing view"] .fAte2d0xETy7pnDUAgHY,
+aside[aria-label="Now playing view"] .mdMUqcSHFw1lZIcYEblu {
+  background-color: rgba(var(--spice-rgb-card), 0.75);
+  -webkit-backdrop-filter: var(--top-bar-backdrop);
+  backdrop-filter: var(--top-bar-backdrop);
+  border-bottom: var(--default-border);
+}
+
+aside[aria-label="Now playing view"]:has(.ZbDMGdU4aBOnrNLowNRq) .main-buddyFeed-scrollBarContainer:not(:has(.main-buddyFeed-content > .main-buddyFeed-header)),
+aside[aria-label="Now playing view"]:has(.W3E0IT3_STcazjTeyOJa) .cZCuJDjrGA2QMXja_Sua:not(:has(.AAdBM1nhG73supMfnYX7 > .fNXmHtlrj4UVWmhQrJ_5)) {
+  padding-top: 4rem;
+}
+
+/* Now Playing Bar */
+/* button[data-restore-focus-key="now_playing_view"] {
+  display: none;
+} */
 
 footer.main-nowPlayingBar-container {
   gap: var(--gap-sm);
@@ -306,7 +394,6 @@ footer.main-nowPlayingBar-container {
 }
 
 .player-controls {
-  /* width: 100%; */
   flex-direction: row;
 }
 
@@ -321,7 +408,8 @@ footer.main-nowPlayingBar-container {
 }
 
 .main-nowPlayingBar-right {
-  width: 17.5rem;
+  min-width: 15vw;
+  width: 15vw;
 }
 
 .main-nowPlayingBar-left {
@@ -378,6 +466,7 @@ button.main-playPauseButton-button {
   position: absolute;
   height: 100%;
   width: 100%;
+  background-color: rgba(var(--spice-rgb-main), 0.5);
   -webkit-backdrop-filter: blur(var(--blur-xl));
   backdrop-filter: blur(var(--blur-xl));
   border-radius: var(--border-radius-md);
@@ -386,7 +475,7 @@ button.main-playPauseButton-button {
 .main-contextMenu-menu,
 [data-tippy-root],
 [data-tippy-root] [data-tippy-root] ul {
-  background-color: rgba(var(--spice-rgb-main), 0.75);
+  background-color: transparent;
   border-radius: var(--border-radius-md);
   border: var(--default-border);
 }
@@ -460,7 +549,7 @@ button.main-playPauseButton-button {
 .search-modal-emptySearchTermContainer,
 .search-modal-keyboard-accessibility-bar,
 .search-modal-listbox {
-  background-color: var(--card-color);
+  background-color: var(--spice-card);
   border: var(--default-border);
 }
 
@@ -572,7 +661,7 @@ button.main-playPauseButton-button {
 .GenericModal,
 .desktopmodals-aboutSpotifyModal-container {
   max-height: 90vh;
-  background-color: var(--card-color);
+  background-color: var(--spice-card);
   border: var(--default-border);
   border-radius: var(--border-radius-md);
   -webkit-backdrop-filter: blur(var(--blur-xl));
@@ -585,6 +674,12 @@ button.main-playPauseButton-button {
   background-color: transparent;
 }
 
+.main-embedWidgetGenerator-contentCode.main-embedWidgetGenerator-visible {
+  border: var(--default-border);
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  backdrop-filter: blur(var(--blur-md));
+}
+
 .main-embedWidgetGenerator-visible,
 .main-embedWidgetGenerator-contentCode.main-embedWidgetGenerator-visible {
   display: block;
@@ -592,7 +687,7 @@ button.main-playPauseButton-button {
 }
 
 .main-embedWidgetGenerator-code {
-  background-color: var(--card-color);
+  background-color: var(--spice-card);
   border: var(--default-border);
-  border-radius: var(--card-border-radius);
+  border-radius: var(--border-radius-md);
 }
