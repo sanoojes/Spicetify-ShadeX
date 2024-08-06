@@ -206,6 +206,10 @@ button,
   border: var(--default-border);
 }
 
+.view-homeShortcutsGrid-shortcut .view-homeShortcutsGrid-PlayButtonContainer .view-homeShortcutsGrid-equaliser {
+  filter: grayscale(1);
+}
+
 .playlist-playlist-refreshButton,
 .search-recentSearches-seeAll {
   background-color: var(--spice-secondary-button);
