@@ -27,6 +27,7 @@
   --padding-md: 0.5rem;
   --padding-lg: 0.75rem;
   --padding-xl: 1rem;
+  --padding-2xl: 1.5rem;
 
   /* Blur */
   --blur-sm: 0.25rem;
@@ -90,7 +91,7 @@ input {
 
 /* Font */
 .main-entityHeader-metaDataText {
-  color: var(--spice-subtext) !important;
+  color: rgba(var(--spice-rgb-text), 0.75) !important;
 }
 
 .encore-text-title-small,
@@ -111,10 +112,23 @@ input {
   font-weight: 500;
 }
 
+/* Main container */
+.spotify__container--is-desktop .Root__top-container {
+  padding-top: 48px;
+}
+
+.spotify__container--is-desktop.spotify__os--is-windows .main-topBar-container {
+  padding-inline: 3vw 8vw;
+}
+
+.spotify__container--is-desktop.spotify__os--is-windows .Root__globalNav {
+  padding-inline: calc(64px* var(--zoom-adjust-coefficient, 1)) calc(135px* var(--zoom-adjust-coefficient, 1));
+}
+
 /* Root Containers */
 .Root__main-view,
-.Root__nav-bar,
-.Root__right-sidebar {
+.Root__right-sidebar,
+.main-yourLibraryX-entryPoints {
   border: var(--default-border);
   border-radius: var(--border-radius-md);
 }
@@ -125,7 +139,6 @@ button,
 .main-globalNav-searchInputContainer,
 .main-globalNav-searchInputContainer .SFAoASy0S_LZJmYZ3Fh9,
 .NqzueDshzvgXEygqOGPG,
-.main-avatar-avatar,
 .Root__globalNav .main-globalNav-link-icon,
 .ButtonInner-large-iconOnly {
   overflow: hidden;
@@ -153,7 +166,7 @@ button,
 }
 
 .Button-buttonPrimary-useBrowserDefaultFocusStyle-data-is-icon-only:hover .ButtonInner-sc-14ud5tc-0 {
-  background-color: rgba(var(--spice-rgb-accent), .75);
+  background-color: var(--spice-secondary-button-hover);
 }
 
 .view-homeShortcutsGrid-shortcut:focus-within,
@@ -180,7 +193,7 @@ button,
 .Button-medium-medium-buttonTertiary-iconOnly-useBrowserDefaultFocusStyle,
 .Root__globalNav .main-globalNav-link-icon {
   background-color: var(--spice-main) !important;
-  border: var(--default-border)
+  border: var(--default-border);
 }
 
 .search-recentSearches-seeAll {
@@ -196,10 +209,48 @@ button,
   background-color: var(--spice-secondary-button-hover);
 }
 
+/* Toggle Button */
+input:checked~.x-toggle-indicatorWrapper {
+  background-color: var(--spice-secondary-button);
+}
+
+input:checked~.x-toggle-indicatorWrapper:hover {
+  background-color: var(--spice-secondary-button-hover);
+}
+
+.x-toggle-indicator {
+  background-color: var(--spice-button)
+}
+
+input:checked~.x-toggle-indicatorWrapper .x-toggle-indicator {
+  background-color: var(--spice-button);
+}
+
+input:hover:not([disabled], :active)~.x-toggle-indicatorWrapper,
+.x-toggle-indicatorWrapper {
+  background-color: var(--spice-button-hover);
+  filter: brightness(1.25);
+}
 
 /* Home Grids */
 .main-gridContainer-gridContainer {
   grid-gap: 0;
+}
+
+/* Home grid cards */
+.main-card-imageContainer {
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+}
+
+.main-card-card .main-image-image,
+.main-card-cardContainer .main-image-image {
+  transition: all ease-in-out .15s;
+}
+
+.main-card-card:hover .main-image-image,
+.main-card-cardContainer:hover .main-image-image {
+  transform: scale(1.05);
 }
 
 /* Home shortcut grid */
@@ -254,7 +305,163 @@ button,
 }
 
 /* Topbar */
+.main-view-container__scroll-node-child-spacer {
+  height: 0px !important;
+}
+
+.main-topBar-container>*,
+.main-topBar-topbarContent {
+  -webkit-app-region: drag !important;
+}
+
+.main-topBar-topbarContentRight button,
+.main-topBar-topbarContentRight *,
+.main-topBar-historyButtons * {
+  -webkit-app-region: no-drag;
+}
+
+.main-topBar-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  height: 48px;
+}
+
+.artist-artistDiscography-topBar,
+.search-searchCategory-SearchCategory,
+.global-nav .main-home-filterChipsContainer,
+.main-trackList-trackListHeader,
+.marketplace-header,
+.main-home-filterChipsContainer {
+  top: 0 !important;
+}
+
+.artist-artistDiscography-tracklist .main-trackList-trackListHeader {
+  top: 40px !important;
+}
+
+.global-nav .artist-artistDiscography-tracklist .main-trackList-trackListHeader {
+  top: 96px !important;
+}
+
+.global-nav .marketplace-header,
+.global-nav .main-trackList-trackListHeader,
+.global-nav .artist-artistDiscography-topBar {
+  top: 64px !important;
+}
+
+.global-nav .main-topBar-container {
+  position: absolute !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.global-nav:has(.BeautifulLyricsPage) .main-topBar-container {
+  position: absolute;
+}
+
+.global-nav .main-home-filterChipsContainer,
+.global-nav .main-topBar-background {
+  border-bottom: var(--default-border);
+}
+
+.main-topBar-topbarContentWrapper {
+  transform-origin: left center;
+  transform: scale(0.75);
+}
+
+.global-nav .main-topBar-topbarContentWrapper {
+  transform: scale(1);
+}
+
+.main-topBar-historyButtons .main-topBar-button,
+.main-topBar-buddyFeed,
+.main-userWidget-boxCondensed {
+  height: 38px;
+  width: 38px;
+}
+
+.main-userWidget-hasAvatar {
+  transform: scale(1.1);
+}
+
+.global-nav .main-userWidget-hasAvatar {
+  transform: scale(1.1);
+}
+
+.main-trackCreditsModal-container {
+  max-height: 90vh;
+  width: max-content;
+  max-width: 75vw;
+}
+
+.main-home-homeHeader {
+  background-color: transparent !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 .main-topBar-overlay {
+  background-color: transparent !important;
+}
+
+.main-entityHeader-topbarTitle {
+  text-wrap: nowrap;
+}
+
+.marketplace-header {
+  background: none !important;
+  background-color: transparent !important;
+  -webkit-backdrop-filter: blur(var(--top-bar-bg-blur)) !important;
+  backdrop-filter: blur(var(--top-bar-bg-blur)) !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.global-nav .marketplace-card-type-heading {
+  visibility: hidden;
+}
+
+.marketplace-header-icon-button,
+.searchbar-bar,
+.Dropdown-control {
+  border-color: var(--card-hover-color);
+  background-color: var(--card-color);
+
+  &:hover {
+    background-color: var(--card-hover-color);
+  }
+}
+
+.global-nav .page-header {
+  margin: 64px 0 16px;
+}
+
+.main-topBar-background {
+  background: none !important;
+  background-color: transparent !important;
+}
+
+.search-searchCategory-carouselButton {
+  background-color: var(--main-color);
+}
+
+.main-topBar-overlay {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* Marketplace */
+.marketplace-header {
+  margin: 0 calc((var(--content-spacing) * -1) - 8px) 0 calc((var(--content-spacing) * -1) - 8px);
+  padding: var(--padding-md) calc(var(--content-spacing)*2);
+}
+
+.marketplace-footer {
+  margin-top: 5rem;
+}
+
+#marketplace-readme {
   background-color: transparent !important;
 }
 
@@ -276,6 +483,16 @@ button,
   background-color: rgba(var(--spice-rgb-main), .6) !important;
 }
 
+.kwzBRpFigKr1EP2d5qle {
+  border-radius: var(--border-radius-sm);
+  background-color: var(--spice-secondary-button-hover);
+}
+
+.kwzBRpFigKr1EP2d5qle:hover {
+  border-radius: var(--border-radius-sm);
+  background-color: var(--spice-secondary-button-hover);
+}
+
 /* Right Sidebar */
 .main-nowPlayingView-section,
 .main-nowPlayingView-aboutArtistV2TextContent {
@@ -287,11 +504,13 @@ button,
 }
 
 /* Input */
+.spicetify-exp-features input.search,
 .main-globalNav-searchInputContainer input {
   background-color: var(--spice-main) !important;
   border: var(--default-border) !important;
 }
 
+.spicetify-exp-features input.search:focus,
 .main-globalNav-searchInputContainer input:focus {
   border: 2px solid var(--spice-selected-row) !important;
 }
@@ -310,8 +529,16 @@ button,
 /* Track List */
 .main-trackList-trackList {
   border: var(--default-border);
-  padding: 0 var(--padding-sm);
 }
+
+.main-trackList-trackListRowGrid {
+  padding: 0 var(--padding-2xl);
+}
+
+.main-trackList-rowMainContent {
+  row-gap: var(--gap-sm);
+}
+
 
 /* Playlist Gradient Background */
 .main-entityHeader-container.main-entityHeader-nonWrapped {
@@ -335,11 +562,30 @@ button,
 }
 
 .main-entityHeader-overlay {
-  background: transparent !important;
+  --bgColor: var(--spice-card) !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(var(--spice-rgb-main), .5))), var(--background-noise);
+  background: linear-gradient(transparent 0, rgba(var(--spice-rgb-main), .5) 100%), var(--background-noise);
 }
 
 .main-actionBarBackground-background {
   background: transparent !important;
+}
+
+.main-entityHeader-container.main-entityHeader-withBackgroundImage {
+  border-radius: var(--border-radius-sm);
+}
+
+.main-entityHeader-background,
+.global-nav .main-entityHeader-background,
+.main-entityHeader-background.main-entityHeader-overlay,
+.global-nav .main-entityHeader-background.main-entityHeader-overlay,
+.main-entityHeader-background.main-entityHeader-overlay:after {
+  height: calc(50vh + 64px);
+}
+
+.main-entityHeader-container.main-entityHeader-withBackgroundImage,
+.global-nav .main-entityHeader-container.main-entityHeader-withBackgroundImage {
+  height: 55vh;
 }
 
 /* Aside Now Playing Bar */
@@ -409,7 +655,7 @@ footer.main-nowPlayingBar-container {
 
 .main-nowPlayingBar-right {
   min-width: 15vw;
-  width: 15vw;
+  width: 18vw;
 }
 
 .main-nowPlayingBar-left {
@@ -510,7 +756,7 @@ button.main-playPauseButton-button {
   border: var(--default-border);
 
   &:hover {
-    background-color: rgba(var(--spice-rgb-button), 0.25);
+    background-color: var(--spice-rgb-button-hover);
   }
 }
 
@@ -633,8 +879,7 @@ button.main-playPauseButton-button {
 }
 
 .GenericModal__overlay {
-  background-color: rgba(var(--spice-rgb-shadow),
-      var(--generic-modal-bg-opacity));
+  background-color: rgba(var(--spice-rgb-shadow), 0.25);
 }
 
 .KIbfbFDao0SHpZsKoKZD,
@@ -661,7 +906,7 @@ button.main-playPauseButton-button {
 .GenericModal,
 .desktopmodals-aboutSpotifyModal-container {
   max-height: 90vh;
-  background-color: var(--spice-card);
+  background-color: rgba(var(--spice-rgb-card), 0.5);
   border: var(--default-border);
   border-radius: var(--border-radius-md);
   -webkit-backdrop-filter: blur(var(--blur-xl));
