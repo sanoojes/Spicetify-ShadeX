@@ -40,8 +40,16 @@
   /* Font */
   --default-font-family: "Inter";
   --normal-font-weight: 500;
-  --bold-font-weight: 600;
-  --extra-bold-font-weight: 700;
+  --bold-font-weight: 700;
+  --extra-bold-font-weight: var(--bold-font-weight);
+  --font-to-use: var(--default-font-family),
+    CircularSp,
+    CircularSp-Arab,
+    CircularSp-Hebr,
+    CircularSp-Cyrl,
+    CircularSp-Grek,
+    CircularSp-Deva,
+    var(--fallback-fonts, sans-serif);
 
   --card-color: rgba(var(--spice-rgb-card), 0.5)
 }
@@ -52,7 +60,7 @@
   --button-size: 1.5rem !important;
   box-shadow: none !important;
   scrollbar-width: thin;
-  font-family: var(--default-font-family), CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif) !important;
+  font-family: var(--font-to-use) !important;
 }
 
 body,
@@ -83,15 +91,19 @@ input {
   color: var(--spice-subtext) !important;
 }
 
-.MWEhk button,
-.MWEhk a,
-.MWEhk [role="button"],
-.MWEhk [role="link"],
-.encore-text-body-medium,
-.encore-text-body-medium-bold {
-  font-weight: var(--bold-font-weight);
+.encore-text-title-small,
+.encore-text-title-medium,
+.encore-text-body-medium-bold,
+.encore-text-body-small-bold,
+.main-card-cardTitle {
+  font-weight: var(--bold-font-weight) !important;
 }
 
+.encore-text-body-small,
+.encore-text-body-medium,
+.encore-text-body-large {
+  font-weight: 500;
+}
 
 /* Root Containers */
 .Root__main-view,
@@ -103,8 +115,6 @@ input {
 
 /* Button Styles */
 button,
-.main-avatar-image,
-.main-image-image,
 .MxmW8QkHqHWtuhO589PV,
 .main-globalNav-searchInputContainer,
 .main-globalNav-searchInputContainer .SFAoASy0S_LZJmYZ3Fh9,
@@ -145,6 +155,16 @@ button,
   background-color: var(--spice-card);
 }
 
+.main-userWidget-box {
+  background-color: var(--spice-main) !important;
+  border: none !important;
+}
+
+.Button-medium-medium-buttonTertiary-iconOnly-useBrowserDefaultFocusStyle,
+.Root__globalNav .main-globalNav-link-icon {
+  background-color: var(--spice-main) !important;
+  border: var(--default-border)
+}
 
 /* Home Header Bg */
 .main-home-homeHeader {
@@ -191,6 +211,16 @@ button,
 
 .main-nowPlayingView-section {
   border: var(--default-border);
+}
+
+/* Input */
+.main-globalNav-searchInputContainer input {
+  background-color: var(--spice-main) !important;
+  border: var(--default-border) !important;
+}
+
+.main-globalNav-searchInputContainer input:focus {
+  border: 2px solid var(--spice-selected-row) !important;
 }
 
 /*  */
@@ -248,10 +278,15 @@ button,
 }
 
 /* Now Playing Bar */
+button[data-restore-focus-key="now_playing_view"] {
+  display: none;
+}
+
 footer.main-nowPlayingBar-container {
   gap: var(--gap-sm);
   border: none;
 }
+
 
 .main-nowPlayingBar-nowPlayingBar {
   border: var(--default-border);
@@ -287,7 +322,6 @@ footer.main-nowPlayingBar-container {
 
 .main-nowPlayingBar-right {
   width: 17.5rem;
-  margin-left: 1.25rem;
 }
 
 .main-nowPlayingBar-left {
