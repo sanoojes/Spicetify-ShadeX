@@ -446,8 +446,8 @@ input:hover:not([disabled], :active)~.x-toggle-indicatorWrapper,
 .marketplace-header {
   background: none !important;
   background-color: transparent !important;
-  -webkit-backdrop-filter: blur(var(--top-bar-bg-blur)) !important;
-  backdrop-filter: blur(var(--top-bar-bg-blur)) !important;
+  -webkit-backdrop-filter: var(--top-bar-backdrop) !important;
+  backdrop-filter: var(--top-bar-backdrop) !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
