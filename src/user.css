@@ -314,6 +314,12 @@ input:hover:not([disabled], :active)~.x-toggle-indicatorWrapper,
   }
 }
 
+.view-homeShortcutsGrid-shortcut .view-homeShortcutsGrid-main {
+  -webkit-padding-start: 0.5rem;
+  -webkit-padding-end: 0.5rem;
+  padding-inline: 0.5rem;
+}
+
 .view-homeShortcutsGrid-shortcut {
   border-radius: var(--border-radius-sm);
   background-color: var(--spice-card);
