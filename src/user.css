@@ -148,7 +148,6 @@ input {
 }
 
 /* Button Styles */
-button,
 .MxmW8QkHqHWtuhO589PV,
 .main-globalNav-searchInputContainer,
 .main-globalNav-searchInputContainer .SFAoASy0S_LZJmYZ3Fh9,
@@ -313,6 +312,12 @@ input:hover:not([disabled], :active)~.x-toggle-indicatorWrapper,
     --item-height: 80px;
     grid-gap: var(--gap-md)
   }
+}
+
+.view-homeShortcutsGrid-shortcut .view-homeShortcutsGrid-main {
+  -webkit-padding-start: 0.5rem;
+  -webkit-padding-end: 0.5rem;
+  padding-inline: 0.5rem;
 }
 
 .view-homeShortcutsGrid-shortcut {
@@ -647,78 +652,82 @@ aside[aria-label="Now playing view"]:has(.W3E0IT3_STcazjTeyOJa) .cZCuJDjrGA2QMXj
   padding-top: 4rem;
 }
 
-/* Base styles */
-:root {
-  --player-height: 90px;
-  --player-padding: 16px;
-  --button-size: 32px;
-}
-
-/* Aside Now Playing Bar */
-aside[aria-label="Now playing view"] .ZbDMGdU4aBOnrNLowNRq,
-aside[aria-label="Now playing view"] .W3E0IT3_STcazjTeyOJa {
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  transition: backdrop-filter 0.5s ease, background-color 0.2s ease;
-  top: 0;
-}
-
-aside[aria-label="Now playing view"] .fAte2d0xETy7pnDUAgHY,
-aside[aria-label="Now playing view"] .mdMUqcSHFw1lZIcYEblu {
-  background-color: rgba(var(--spice-rgb-card), 0.75);
-  -webkit-backdrop-filter: var(--top-bar-backdrop);
-  backdrop-filter: var(--top-bar-backdrop);
-  border-bottom: var(--default-border);
-}
-
 /* Now Playing Bar */
+/* button[data-restore-focus-key="now_playing_view"] {
+  display: none;
+} */
+
 footer.main-nowPlayingBar-container {
-  height: var(--player-height);
-  padding: 0 var(--player-padding);
-  display: flex;
-  align-items: center;
+  gap: var(--gap-sm);
+  border: none;
 }
+
 
 .main-nowPlayingBar-nowPlayingBar {
   border: var(--default-border);
   border-radius: var(--border-radius-md);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.main-nowPlayingBar-left,
-.main-nowPlayingBar-right {
-  flex: 1;
-  min-width: 180px;
-}
-
-.main-nowPlayingBar-center {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .player-controls__buttons {
-  display: flex;
-  justify-content: center;
+  width: fit-content;
+  padding-left: 5vw;
+  margin-bottom: 0;
   align-items: center;
-  gap: 16px;
+}
+
+.player-controls__right,
+.player-controls__left {
+  align-items: center;
+}
+
+.player-controls {
+  flex-direction: row;
+}
+
+@media (max-width: 70rem) {
+  .player-controls {
+    flex-direction: column;
+  }
+
+  .player-controls__buttons {
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .main-nowPlayingBar-right,
+  .main-nowPlayingBar-left {
+    min-width: 25vw;
+  }
+}
+
+.main-trackInfo-container {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.main-nowPlayingBar-center {
+  max-width: 722px;
+  flex-grow: 1;
+}
+
+.main-nowPlayingBar-right {
+  min-width: fit-content;
+  width: 25vw;
+}
+
+.main-nowPlayingBar-left {
+  width: 20vw;
 }
 
 button.main-playPauseButton-button {
   background: none;
   color: var(--spice-text);
-  width: var(--button-size);
-  height: var(--button-size);
+  --button-size: unset !important;
 }
 
 .main-playPauseButton-button svg {
-  width: 100%;
-  height: 100%;
+  height: 20px;
+  width: 21px;
 }
 
 /* Progress Bar */
@@ -728,45 +737,19 @@ button.main-playPauseButton-button {
   --is-active-fg-color: rgba(var(--spice-rgb-accent), 0.75);
   --progress-bar-height: 4px;
   --progress-bar-radius: calc(var(--progress-bar-height)/2);
-  width: 100%;
-  max-width: 400px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1080px) {
-  :root {
-    --player-height: 70px;
-    --player-padding: 8px;
-    --button-size: 28px;
-  }
-
-  .main-nowPlayingBar-left,
-  .main-nowPlayingBar-right {
-    min-width: 120px;
-  }
-
-  .player-controls__buttons {
-    gap: 8px;
-  }
+.x-progressBar-fillColor {
+  transition: transform 1s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-@media (max-width: 768px) {
-  .main-nowPlayingBar-nowPlayingBar {
-    flex-direction: column;
-    height: auto;
-    padding: var(--player-padding) 0;
-  }
+.progress-bar__slider {
+  transition: left 1s cubic-bezier(0.23, 1, 0.320, 1);
+}
 
-  .main-nowPlayingBar-left,
-  .main-nowPlayingBar-center,
-  .main-nowPlayingBar-right {
-    width: 100%;
-    padding: 8px 0;
-  }
-
-  .progress-bar {
-    max-width: none;
-  }
+.playback-progressbar-isInteractive .DuvrswZugGajIFNXObAr .x-progressBar-fillColor,
+.playback-progressbar-isInteractive .DuvrswZugGajIFNXObAr .progress-bar__slider {
+  transition: none;
 }
 
 /* connect bar */
