@@ -706,7 +706,7 @@ footer.main-nowPlayingBar-container {
 }
 
 .main-nowPlayingBar-center {
-  max-width: 722px;
+  max-width: 55vw;
   flex-grow: 1;
 }
 
