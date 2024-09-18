@@ -694,19 +694,35 @@ footer.main-nowPlayingBar-container {
   flex-direction: row;
 }
 
+@media (max-width: 70rem) {
+  .player-controls {
+    flex-direction: column;
+  }
+
+  .player-controls__buttons {
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .main-nowPlayingBar-right,
+  .main-nowPlayingBar-left {
+    min-width: 25vw;
+  }
+}
+
 .main-trackInfo-container {
   flex-grow: 1;
   flex-basis: 0;
 }
 
 .main-nowPlayingBar-center {
-  max-width: none;
+  max-width: 55vw;
   flex-grow: 1;
 }
 
 .main-nowPlayingBar-right {
-  min-width: 15vw;
-  width: 20vw;
+  min-width: fit-content;
+  width: 25vw;
 }
 
 .main-nowPlayingBar-left {
