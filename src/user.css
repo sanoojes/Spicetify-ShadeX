@@ -546,15 +546,25 @@ input:hover:not([disabled], :active)~.x-toggle-indicatorWrapper,
 
 /* Input */
 .spicetify-exp-features input.search,
+.x-searchInput-searchInputInput,
 .main-globalNav-searchInputContainer input {
   background-color: var(--spice-main) !important;
   border: var(--default-border) !important;
 }
 
+.x-searchInput-searchInputInput:focus,
 .spicetify-exp-features input.search:focus,
 .main-globalNav-searchInputContainer input:focus {
   border: 2px solid var(--spice-selected-row) !important;
 }
+
+.main-topBar-historyButtons .main-topBar-button,
+.main-topBar-buddyFeed,
+.main-userWidget-boxCondensed,
+.x-searchInput-searchInputInput {
+  border-radius: var(--button-border-radius, 0.75rem);
+}
+
 
 /*  */
 .x-sortBox-sortDropdown,
