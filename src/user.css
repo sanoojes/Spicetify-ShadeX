@@ -265,6 +265,10 @@ input:hover:not([disabled], :active)~.x-toggle-indicatorWrapper,
   grid-gap: 0;
 }
 
+.MKCgGhu_c8l6hsVuee46 .main-shelf-shelfGrid {
+  margin-inline: 0;
+}
+
 /* Home grid cards */
 .main-card-imageContainer {
   overflow: hidden;
