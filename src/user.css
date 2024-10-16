@@ -129,10 +129,6 @@ input {
   padding-inline: 0;
 }
 
-.spotify__container--is-desktop.spotify__os--is-windows .Root__globalNav {
-  padding-inline: calc(64px* var(--zoom-adjust-coefficient, 1)) calc(135px* var(--zoom-adjust-coefficient, 1));
-}
-
 .spotify__container--is-desktop.spotify__os--is-macos .main-topBar-container,
 .spotify__container--is-desktop.spotify__os--is-macos .Root__globalNav {
   -webkit-padding-start: calc(80px*var(--zoom-adjust-coefficient, 1));
