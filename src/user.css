@@ -121,6 +121,10 @@ input {
   padding-top: 48px;
 }
 
+.spotify__container--is-desktop .global-nav .Root__top-container {
+  padding-top: var(--panel-gap, 0.5rem);
+}
+
 .spotify__container--is-desktop.spotify__os--is-windows .main-topBar-container {
   padding-inline: 3vw 8vw;
 }
@@ -141,6 +145,10 @@ input {
 .main-yourLibraryX-entryPoints {
   border: var(--default-border);
   border-radius: var(--border-radius-md);
+}
+
+.main-home-content.contentSpacing {
+  padding-top: 0.5rem;
 }
 
 /* Button Styles */
@@ -220,8 +228,8 @@ input {
 
 .playlist-playlist-refreshButton,
 .search-recentSearches-seeAll {
-  background-color: var(--spice-secondary-button);
-  color: var(--spice-secondary-text);
+  background-color: var(--spice-secondary-button) !important;
+  color: var(--spice-secondary-text) !important;
   margin: 0;
   padding: var(--padding-md) var(--padding-lg);
   border-radius: var(--border-radius-md);
@@ -547,11 +555,15 @@ input:hover:not([disabled], :active)~.x-toggle-indicatorWrapper,
 /* Input */
 .spicetify-exp-features input.search,
 .x-searchInput-searchInputInput,
+.main-topBar-searchBar,
+.b7r2WRiu5f9Q99qmyreh .main-topBar-searchBar,
 .main-globalNav-searchInputContainer input {
   background-color: var(--spice-main) !important;
   border: var(--default-border) !important;
 }
 
+.main-topBar-searchBar:focus,
+.b7r2WRiu5f9Q99qmyreh .main-topBar-searchBar:focus,
 .x-searchInput-searchInputInput:focus,
 .spicetify-exp-features input.search:focus,
 .main-globalNav-searchInputContainer input:focus {
@@ -561,8 +573,10 @@ input:hover:not([disabled], :active)~.x-toggle-indicatorWrapper,
 .main-topBar-historyButtons .main-topBar-button,
 .main-topBar-buddyFeed,
 .main-userWidget-boxCondensed,
+.main-topBar-searchBar,
+.b7r2WRiu5f9Q99qmyreh .main-topBar-searchBar,
 .x-searchInput-searchInputInput {
-  border-radius: var(--button-border-radius, 0.75rem);
+  border-radius: var(--button-border-radius, 0.75rem) !important;
 }
 
 
