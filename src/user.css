@@ -928,6 +928,10 @@ button.main-playPauseButton-button {
   background-color: transparent !important;
 }
 
+.main-genericButton-button.main-genericButton-buttonActiveDot:after {
+  background-color: var(--spice-text) !important;
+}
+
 /* Generic Modal */
 
 .GenericModal__overlay {
