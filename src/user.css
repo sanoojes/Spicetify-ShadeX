@@ -142,6 +142,7 @@ input {
 /* Root Containers */
 .Root__main-view,
 .Root__right-sidebar,
+.global-libraryX.Root__globalNav,
 .main-yourLibraryX-entryPoints {
   border: var(--default-border);
   border-radius: var(--border-radius-md);
