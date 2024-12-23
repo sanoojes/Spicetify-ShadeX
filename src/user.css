@@ -222,12 +222,13 @@ input {
   border: var(--default-border);
 }
 
-.view-homeShortcutsGrid-shortcut .view-homeShortcutsGrid-PlayButtonContainer .view-homeShortcutsGrid-equaliser {
+.main-trackList-rowMarker,
+.view-homeShortcutsGrid-PlayButtonContainer .view-homeShortcutsGrid-equaliser {
   filter: grayscale(1);
 }
 
 .playlist-playlist-refreshButton,
-.search-recentSearches-seeAll {
+.search-recentSearches-seeAll>span {
   background-color: var(--spice-secondary-button) !important;
   color: var(--spice-secondary-text) !important;
   margin: 0;
@@ -236,7 +237,7 @@ input {
 }
 
 .playlist-playlist-refreshButton:hover,
-.search-recentSearches-seeAll:hover {
+.search-recentSearches-seeAll>span:hover {
   text-decoration: none !important;
   background-color: var(--spice-secondary-button-hover);
 }
@@ -722,11 +723,6 @@ footer.main-nowPlayingBar-container {
   .main-nowPlayingBar-left {
     min-width: 25vw;
   }
-}
-
-.main-trackInfo-container {
-  flex-grow: 1;
-  flex-basis: 0;
 }
 
 .main-nowPlayingBar-center {
