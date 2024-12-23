@@ -933,6 +933,16 @@ button.main-playPauseButton-button {
   background-color: var(--spice-text) !important;
 }
 
+.ouiL5cH1WduxtprQ0Iig {
+  aspect-ratio: auto;
+  margin-top: 24px;
+}
+
+.ouiL5cH1WduxtprQ0Iig video {
+  min-height: auto !important;
+  height: auto;
+}
+
 /* Generic Modal */
 
 .GenericModal__overlay {
