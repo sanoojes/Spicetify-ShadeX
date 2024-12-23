@@ -812,7 +812,7 @@ button.main-playPauseButton-button {
 
 .main-contextMenu-menuItemButton:hover,
 .main-contextMenu-menuItemButton:not([aria-checked="true"]):focus {
-  background-color: rgba(var(--spice-rgb-main), 0.25);
+  background-color: rgba(var(--spice-rgb-selected-row), 0.1)
 }
 
 .X5mwWAw7ijxPvQOoabzQ,
